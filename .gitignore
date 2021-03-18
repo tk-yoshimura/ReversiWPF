@@ -1,0 +1,9 @@
+﻿/.vs
+/packages
+/**/bin
+/**/obj
+/TestResults
+/**/*.png
+/**/*.jpg
+/**/PublishProfiles
+!/api.png

@@ -1,0 +1,50 @@
+﻿<Window x:Class="ReversiWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ReversiWPF"
+        mc:Ignorable="d"
+        Title="Reversi AI Demo" Height="579" Width="826" ResizeMode="CanMinimize" Icon="Resources/reversi_icon.ico">
+    <Grid Background="WhiteSmoke">
+        <ComboBox x:Name="combobox_select_AI" HorizontalAlignment="Left" Height="30" Margin="30,16,0,0" VerticalAlignment="Top" Width="240" FontSize="16" SelectionChanged="OnSelectionChangedComboboxSelectAI"/>
+        <StackPanel HorizontalAlignment="Left" Height="60" Margin="30,106,0,0" VerticalAlignment="Top" Width="90">
+            <RadioButton x:Name="radiobutton_prev" Content="先攻" Height="30" FontSize="20" BorderThickness="1" Margin="0" VerticalAlignment="Center" VerticalContentAlignment="Center" IsChecked="True" Click="OnClickRadiobuttonPrev"/>
+            <RadioButton x:Name="radiobutton_post" Content="後攻" Height="30" FontSize="20" BorderThickness="1" Margin="0" VerticalAlignment="Center" VerticalContentAlignment="Center" Click="OnClickRadiobuttonPost"/>
+        </StackPanel>
+        <Button x:Name="button_reset" Content="リセット" HorizontalAlignment="Left" Height="30" Margin="30,226,0,0" VerticalAlignment="Top" Width="135" FontSize="20" Click="OnClickButtonReset"/>
+        <Button x:Name="button_pass" Content="パス" HorizontalAlignment="Left" Height="30" Margin="30,286,0,0" VerticalAlignment="Top" Width="135" FontSize="20" Click="OnClickButtonPass"/>
+        <Button x:Name="button_undo" Content="指し戻し" HorizontalAlignment="Left" Height="30" Margin="30,346,0,0" VerticalAlignment="Top" Width="135" FontSize="20" Click="OnClickButtonUndo"/>
+        <Label x:Name="label_blackcount" Content="{Binding BlackStoneCount}" HorizontalAlignment="Left" Height="35" Margin="228,304,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom" FontSize="20"/>
+        <Label x:Name="label_whitecount" Content="{Binding WhiteStoneCount}" HorizontalAlignment="Left" Height="35" Margin="228,346,0,0" VerticalAlignment="Top" Width="37" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom" FontSize="20"/>
+        <Grid HorizontalAlignment="Left" Height="26" Margin="197,309,0,0" VerticalAlignment="Top" Width="26">
+            <Ellipse Fill="Black"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="26" Margin="197,350,0,0" VerticalAlignment="Top" Width="26">
+            <Ellipse Fill="White" Stroke="Black"/>
+        </Grid>
+        <Canvas x:Name="canvas_board" HorizontalAlignment="Left" Height="480" Margin="300,16,0,0" VerticalAlignment="Top" Width="480" MouseDown="OnMouseDownCanvasBoard">
+            <Rectangle Fill="#FFFBFBFB" Height="480" Width="480"/>
+            <Border BorderBrush="Black" BorderThickness="1.5" Height="480" Width="480"/>
+            <Line X1="60" X2="60" Y1="0" Y2="480" Stroke="Black" StrokeThickness="2"/>
+            <Line X1="120" X2="120" Y1="0" Y2="480" Stroke="Black" StrokeThickness="2"/>
+            <Line X1="180" X2="180" Y1="0" Y2="480" Stroke="Black" StrokeThickness="2"/>
+            <Line X1="240" X2="240" Y1="0" Y2="480" Stroke="Black" StrokeThickness="2"/>
+            <Line X1="300" X2="300" Y1="0" Y2="480" Stroke="Black" StrokeThickness="2"/>
+            <Line X1="360" X2="360" Y1="0" Y2="480" Stroke="Black" StrokeThickness="2"/>
+            <Line X1="420" X2="420" Y1="0" Y2="480" Stroke="Black" StrokeThickness="2"/>
+            <Line X1="0" X2="480" Y1="60" Y2="60" Stroke="Black" StrokeThickness="2"/>
+            <Line X1="0" X2="480" Y1="120" Y2="120" Stroke="Black" StrokeThickness="2"/>
+            <Line X1="0" X2="480" Y1="180" Y2="180" Stroke="Black" StrokeThickness="2"/>
+            <Line X1="0" X2="480" Y1="240" Y2="240" Stroke="Black" StrokeThickness="2"/>
+            <Line X1="0" X2="480" Y1="300" Y2="300" Stroke="Black" StrokeThickness="2"/>
+            <Line X1="0" X2="480" Y1="360" Y2="360" Stroke="Black" StrokeThickness="2"/>
+            <Line X1="0" X2="480" Y1="420" Y2="420" Stroke="Black" StrokeThickness="2"/>
+        </Canvas>
+        <StatusBar Height="30" VerticalAlignment="Bottom" >
+            <Label x:Name="label_status" Content="{Binding StatusText}" Width="820" Height="30"/>
+        </StatusBar>
+        <Label Content="Copyright © T.Yoshimura 2019" HorizontalAlignment="Left" Height="33" Margin="10,463,0,0" VerticalAlignment="Top" Width="290" FontSize="10.667"/>
+        <Label Content="https://github.com/tk-yoshimura" HorizontalAlignment="Left" Height="33" Margin="10,487,0,0" VerticalAlignment="Top" Width="290" FontSize="10.667"/>
+    </Grid>
+</Window>

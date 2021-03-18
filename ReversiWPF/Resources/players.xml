@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<reversi_players>
+  <player name="Depth1" className="ReversiEngine.Reversi.WakabaTechD1Player" />
+  <player name="Depth2" className="ReversiEngine.Reversi.WakabaTechD2Player" />
+  <player name="Depth3" className="ReversiEngine.Reversi.WakabaTechD3Player" />
+  <player name="Depth4" className="ReversiEngine.Reversi.WakabaTechD4Player" />
+  <player name="Depth5" className="ReversiEngine.Reversi.WakabaTechD5Player" />
+  <player name="Depth6" className="ReversiEngine.Reversi.WakabaTechD6Player" />
+  <player name="Depth7" className="ReversiEngine.Reversi.WakabaTechD7Player" />
+  <player name="Depth8" className="ReversiEngine.Reversi.WakabaTechD8Player" />
+  <player name="Evaluate1250" className="ReversiEngine.Reversi.WakabaTechE1250Player" />
+  <player name="Evaluate2500" className="ReversiEngine.Reversi.WakabaTechE2500Player" />
+  <player name="Evaluate5000" className="ReversiEngine.Reversi.WakabaTechE5000Player" />
+</reversi_players>
